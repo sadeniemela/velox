@@ -2,7 +2,7 @@
 
 A high-performance AI productivity SaaS landing page built with Next.js, GSAP, and Lenis. Created as a portfolio project to demonstrate advanced scroll-driven animations and modern frontend architecture.
 
-Live demo: [velox.vercel.app](https://velox.vercel.app) *(coming soon)*
+Live demo: [velox-delta-six.vercel.app](https://velox-delta-six.vercel.app/) 
 
 ---
 
