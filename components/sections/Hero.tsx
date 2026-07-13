@@ -46,9 +46,9 @@ export default function Hero() {
         <section ref={container}
             className="min-h-screen flex flex-col items-start justify-center gap-8 py-20">
 
-            <h1 className="text-[clamp(3rem,10vw,9rem)] leading-[0.9] hero-title">
+            <h1 className="text-[clamp(3rem,10vw,9rem)] leading-[0.9] hero-title font-bold">
                 {words.map((word, i) => (
-                    <span key={i} className="hero-word font-bold text-8xl p-4 block">
+                    <span key={i} className="hero-word font-bold text-8xl p-4 block font-bold">
                         {word}
                     </span>
                 ))}
@@ -58,9 +58,6 @@ export default function Hero() {
             Velox uses AI to eliminate busywork so your team can focus on what actually matters.
             </p>
 
-            <button className="hero-cta px-8 py-3.5 text-base font-medium bg-[#ededed] text-[#080808] border-none rounded-full cursor-pointer tracking-[-0.01em] hover:bg-white transition-colors">
-            Get started free
-            </button>
 
         </section>
     )
