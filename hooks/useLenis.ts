@@ -1,17 +1,23 @@
 "use client"
 
 // Importing necessary modules and types
-import { useEffect } from "react"
+import { useEffect, useLayoutEffect } from "react"
 import Lenis from "lenis"
 import { ScrollTrigger } from "@/lib/gsap"
 
 // Module-level reference to the active Lenis instance so other client
-// components (e.g. the section nav dots) can trigger programmatic scrolling
-// via lenis.scrollTo() without needing a React context.
 export let lenisInstance: Lenis | null = null
 
 // Custom hook to initialize and manage the Lenis smooth scrolling library
 export function useLenis() {
+  // Browsers restore the previous scroll position on reload by default. Fix this by forcing the scroll position to the top on initial render.
+  useLayoutEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual"
+    }
+    window.scrollTo(0, 0)
+  }, [])
+
   useEffect(() => {
     // Creating a new instance of Lenis with specified options
     const lenis = new Lenis({
@@ -20,6 +26,9 @@ export function useLenis() {
     })
 
     lenisInstance = lenis
+
+    // Make sure Lenis itself also starts from the top before anything else
+    lenis.scrollTo(0, { immediate: true })
 
     // Setting up an event listener to update ScrollTrigger on scroll events
     lenis.on("scroll", ScrollTrigger.update)
@@ -32,10 +41,7 @@ export function useLenis() {
 
     requestAnimationFrame(raf)
 
-    // Recalculate ScrollTrigger's trigger positions now that Lenis is driving
-    // scroll. Without this, ScrollTrigger can measure trigger elements before
-    // layout/fonts settle and leave scroll-triggered animations (e.g. the
-    // Features card fade-in) stuck in their "from" state.
+    // Recalculate ScrollTrigger's trigger positions now that Lenis is driving the scroll position
     ScrollTrigger.refresh()
 
     // Cleanup function to destroy the Lenis instance when the component unmounts

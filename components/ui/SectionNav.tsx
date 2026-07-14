@@ -4,8 +4,7 @@ import { useRef } from "react"
 import { useGSAP, ScrollTrigger } from "@/lib/gsap"
 import { lenisInstance } from "@/hooks/useLenis"
 
-// Add a new entry here whenever a new section gets a real id (e.g. once
-// Showcase / Stats / CTA are built out).
+// Add a new entry here whenever a new section gets a real id 
 const sections = [
     { id: "hero", label: "Home" },
     { id: "features", label: "Features" },
