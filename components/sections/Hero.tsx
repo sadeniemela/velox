@@ -42,7 +42,7 @@ export default function Hero() {
 
 
     return (
-        <section ref={container}
+        <section ref={container} id="hero"
             className="min-h-screen flex flex-col items-center justify-center gap-8 py-20 px-6 sm:px-12 lg:px-20 text-center overflow-x-hidden">
 
             <h1 className="text-[clamp(3rem,10vw,9rem)] leading-[0.9] hero-title font-bold">

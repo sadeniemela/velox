@@ -5,6 +5,11 @@ import { useEffect } from "react"
 import Lenis from "lenis"
 import { ScrollTrigger } from "@/lib/gsap"
 
+// Module-level reference to the active Lenis instance so other client
+// components (e.g. the section nav dots) can trigger programmatic scrolling
+// via lenis.scrollTo() without needing a React context.
+export let lenisInstance: Lenis | null = null
+
 // Custom hook to initialize and manage the Lenis smooth scrolling library
 export function useLenis() {
   useEffect(() => {
@@ -13,6 +18,8 @@ export function useLenis() {
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     })
+
+    lenisInstance = lenis
 
     // Setting up an event listener to update ScrollTrigger on scroll events
     lenis.on("scroll", ScrollTrigger.update)
@@ -33,6 +40,7 @@ export function useLenis() {
 
     // Cleanup function to destroy the Lenis instance when the component unmounts
     return () => {
+      lenisInstance = null
       lenis.destroy()
     }
   }, [])

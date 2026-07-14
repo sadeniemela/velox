@@ -49,7 +49,7 @@ export default function Features() {
     }, { scope: container })
 
     return (
-        <section ref={container} className="min-h-screen flex flex-col items-center justify-center gap-16 py-32 px-8 sm:px-12 lg:px-20 xl:px-28 text-center">
+        <section ref={container} id="features" className="min-h-screen flex flex-col items-center justify-center gap-16 py-32 px-8 sm:px-12 lg:px-20 xl:px-28 text-center">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight max-w-3xl mx-auto">
                 Everything your team needs, nothing it doesn&apos;t.
             </h2>
