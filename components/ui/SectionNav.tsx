@@ -10,6 +10,7 @@ const sections = [
     { id: "hero", label: "Home" },
     { id: "features", label: "Features" },
     { id: "showcase", label: "Showcase" },
+    { id: "stats", label: "Stats" },
 ]
 
 const ACTIVE_CLASSES = ["bg-[#ededed]", "border-[#ededed]", "scale-125"]
