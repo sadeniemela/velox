@@ -25,6 +25,12 @@ export function useLenis() {
 
     requestAnimationFrame(raf)
 
+    // Recalculate ScrollTrigger's trigger positions now that Lenis is driving
+    // scroll. Without this, ScrollTrigger can measure trigger elements before
+    // layout/fonts settle and leave scroll-triggered animations (e.g. the
+    // Features card fade-in) stuck in their "from" state.
+    ScrollTrigger.refresh()
+
     // Cleanup function to destroy the Lenis instance when the component unmounts
     return () => {
       lenis.destroy()

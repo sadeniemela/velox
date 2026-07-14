@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
-import { compileFunction } from "vm";
 
 export default function Hero() {
 
@@ -44,17 +43,17 @@ export default function Hero() {
 
     return (
         <section ref={container}
-            className="min-h-screen flex flex-col items-start justify-center gap-8 py-20">
+            className="min-h-screen flex flex-col items-center justify-center gap-8 py-20 px-6 sm:px-12 lg:px-20 text-center overflow-x-hidden">
 
             <h1 className="text-[clamp(3rem,10vw,9rem)] leading-[0.9] hero-title font-bold">
                 {words.map((word, i) => (
-                    <span key={i} className="hero-word font-bold text-8xl p-4 block font-bold">
+                    <span key={i} className="hero-word p-2 sm:p-4 block">
                         {word}
                     </span>
                 ))}
             </h1>
 
-            <p className="hero-sub text-[clamp(1rem,2vw,1.25rem)] text-[#888] max-w-120 leading-relaxed">
+            <p className="hero-sub text-[clamp(1rem,2vw,1.25rem)] text-[#888] max-w-2xl mx-auto leading-relaxed">
             Velox uses AI to eliminate busywork so your team can focus on what actually matters.
             </p>
 

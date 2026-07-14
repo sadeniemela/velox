@@ -1,27 +1,29 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-:root {
-  --font-sans: "Geist", sans-serif;
-  --font-mono: "Geist Mono", monospace;
-}
+  :root {
+    --font-sans: "Geist", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+  }
 
-html {
-  background-color: #080808;
-  color: #ededed;
-}
+  html {
+    background-color: #080808;
+    color: #ededed;
+  }
 
-body {
-  font-family: var(--font-sans);
-  overflow-x: hidden;
-}
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
 
-::selection {
-  background: #ededed;
-  color: #080808;
+  ::selection {
+    background: #ededed;
+    color: #080808;
+  }
 }
