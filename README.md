@@ -1,4 +1,6 @@
-# Velox
+This is personal learning project, built to practice **GSAP + Lenis** animations.
+
+# Velox 
 
 A high-performance AI productivity SaaS landing page built with Next.js, GSAP, and Lenis. Created as a portfolio project to demonstrate advanced scroll-driven animations and modern frontend architecture.
 
