@@ -45,7 +45,7 @@ export default function Hero() {
         <section ref={container} id="hero"
             className="min-h-screen flex flex-col items-center justify-center gap-6 py-16 px-6 sm:px-12 lg:px-20 text-center overflow-x-hidden">
 
-            <h1 className="text-[clamp(2.75rem,7vw,6rem)] leading-[0.9] hero-title font-bold">
+            <h1 className="text-[clamp(3.5rem,7vw,6rem)] leading-[0.9] hero-title font-bold">
                 {words.map((word, i) => (
                     <span key={i} className="hero-word p-1 sm:p-2 block">
                         {word}
